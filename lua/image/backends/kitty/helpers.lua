@@ -92,7 +92,7 @@ local write_graphics = function(config, data)
       else
         control_payload = "m=1"
       end
-      vim.loop.sleep(1) -- fix for loading big images over docker/ssh
+      vim.loop.sleep(3) -- fix for loading big images over docker/ssh
     end
   else
     -- utils.debug("kitty control payload:", control_payload)
