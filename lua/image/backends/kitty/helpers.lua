@@ -45,7 +45,7 @@ local move_cursor = function(x, y, save)
   end
   if save then write("\x1b[s") end
   write("\x1b[" .. y .. ";" .. x .. "H")
-  vim.loop.sleep(1)
+  vim.loop.sleep(5)
 end
 
 local restore_cursor = function()
@@ -92,7 +92,7 @@ local write_graphics = function(config, data)
       else
         control_payload = "m=1"
       end
-      vim.loop.sleep(3) -- fix for loading big images over docker/ssh
+      vim.loop.sleep(5) -- fix for loading big images over docker/ssh
     end
   else
     -- utils.debug("kitty control payload:", control_payload)
